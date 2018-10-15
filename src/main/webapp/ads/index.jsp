@@ -32,13 +32,16 @@
 </head>
 <body>
     <jsp:include page="../partials/navbar.jsp"/>
-   <div>
+
+    <h1>Here is a list of ads:</h1>
+
+    <div>
     <table>
-    <c:forEach var="ads" items="${ads}">
+    <c:forEach var="adsList" items="${adsList}">
             <tr>
-            <td>${ads.title}</td>
-            <td>Description: ${ads.description}</td>
-                <td>Sold by: User #${ads.userId}</td>
+            <td>${adsList.title}</td>
+            <td>Description: ${adsList.description}</td>
+                <td>Sold by: User #${adsList.userId}</td>
             </tr>
     </c:forEach>
 

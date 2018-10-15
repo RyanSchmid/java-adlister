@@ -6,11 +6,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ShowAdsServlet", urlPatterns = "/ads")
-public class ShowAdsServlet extends HttpServlet {
+@WebServlet(name = "AdsServlet", urlPatterns = "/ads")
+public class AdsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Ad> ads = DaoFactory.getAdsDao().all();
-        request.setAttribute("ads", ads);
+        List<Ad> adsList = DaoFactory.getAdsDao().all();
+        request.setAttribute("adsList", adsList);
         request.getRequestDispatcher("/ads/index.jsp").forward(request, response);
     }
 }

@@ -13,8 +13,6 @@
     </div>
 
 
-<h1>Here is a list of ads:</h1>
-
 
 
 
