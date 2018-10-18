@@ -25,6 +25,7 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public List<Ad> all() {
+        // result set query execution
         Statement stmt = null;
         try {
             stmt = connection.createStatement();
@@ -64,6 +65,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException {
+        // takes values from resultset.next() and constructs ad object
         return new Ad(
             rs.getLong("id"),
             rs.getLong("user_id"),
@@ -73,6 +75,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
+        // loops through the result set and fills up an array list of ad objects
         List<Ad> ads = new ArrayList<>();
         while (rs.next()) {
             ads.add(extractAd(rs));
